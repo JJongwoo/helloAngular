@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let cust of customers"
+    [class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
+      <h4>{{cust.id}} - {{cust.firstName}} {{cust.lastName}}</h4> 
+  </li>
+</ul>
+
+<!--자식 컴포넌트를 집어 넣은것-->
+<app-customer-details [customer]="selectedCustomer"> </app-customer-details>
